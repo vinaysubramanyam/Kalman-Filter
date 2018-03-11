@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <stdlib.h>
+#include <stdlib.h>
 #include <math.h>
 #include <iostream>
 #include <cstring>
@@ -16,12 +16,6 @@ inline double closed_interval_rand(double x0, double x1)
 {
 	return x0 + (x1 - x0) * rand() / ((double) RAND_MAX);
 }
-
-
-
-
-
-
 
 int main(){
 	
@@ -69,7 +63,7 @@ int main(){
 	ONoise.assign(ObsDim,vector<float>(N,0));
 
 
-/* PNoise */
+	/* PNoise */
 	for (int i = 0; i < A1.size(); i++)
 	{
 	    for (int j = 0; j < A1[i].size(); j++)
@@ -101,7 +95,7 @@ int main(){
 	    }
 	}
 
-/* ONoise */
+	/* ONoise */
 	for (int i = 0; i < B1.size(); i++)
 	{
 	    for (int j = 0; j < B1[i].size(); j++)
@@ -198,7 +192,7 @@ int main(){
 	}
 
 	
-/* Important */
+	/* Important */
 	for (int i=0;i<Q.size();i++){
 		for (int j=0;j<Q[0].size();j++){
 			Q[i][j]/=N; 
@@ -227,7 +221,7 @@ int main(){
 		}
 	}
 
-/* Important */	
+	/* Important */	
 	float R=0;
 	vector<vector<float>> ONoise_cov(ONoise_transpose[0].size(),vector<float>(ONoise_transpose[0].size()));
 	for (int i=0;i<ONoise_cov.size();i++){
